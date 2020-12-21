@@ -1,0 +1,12 @@
+name: test kcov action
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: get kcov version
+              uses: sudo-bot/action-kcov
+              with:
+                  cli-args: "--version"

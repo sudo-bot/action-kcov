@@ -1,0 +1,17 @@
+name: "action-kcov"
+author: williamdes
+description: "Use Kcov without having to install it and generate your coverage"
+inputs:
+    cli-args:
+        description: "Command line arguments"
+        required: true
+
+branding:
+    icon: "book"
+    color: blue
+runs:
+    using: "docker"
+    image: "docker://shellspec/kcov"
+    args:
+        - kcov
+        - ${{ inputs.cli-args }}
