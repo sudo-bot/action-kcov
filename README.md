@@ -7,7 +7,7 @@ A GitHub action for kcov
 ```yml
     - uses: actions/checkout@v2
     - name: get kcov version
-        uses: sudo-bot/action-kcov
+        uses: sudo-bot/action-kcov@latest
         with:
             cli-args: "--version"
 ```
