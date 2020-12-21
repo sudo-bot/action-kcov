@@ -7,8 +7,8 @@ inputs:
         required: true
 
 branding:
-    icon: "book"
-    color: blue
+    icon: "umbrella"
+    color: purple
 runs:
     using: "docker"
     image: "docker://shellspec/kcov"
