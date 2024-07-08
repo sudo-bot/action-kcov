@@ -1,4 +1,8 @@
 name: test kcov action
+
+permissions:
+  contents: read
+
 on: [push]
 
 jobs:
