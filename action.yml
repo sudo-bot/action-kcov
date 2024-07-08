@@ -11,7 +11,7 @@ branding:
     color: purple
 runs:
     using: "docker"
-    image: "docker://shellspec/kcov"
+    image: "docker://kcov/kcov"
     args:
         - kcov
         - ${{ inputs.cli-args }}
