@@ -11,7 +11,7 @@ branding:
     color: purple
 runs:
     using: "docker"
-    image: "docker://kcov/kcov:latest-alpine"
+    image: "docker://kcov/kcov:latest"
     entrypoint: sh
     args:
         - "-ceux"
