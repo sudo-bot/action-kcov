@@ -1,4 +1,4 @@
-name: test kcov action
+name: Test kcov action
 
 permissions:
   contents: read
@@ -6,7 +6,8 @@ permissions:
 on: [push]
 
 jobs:
-    build:
+    test:
+        name: Test the action
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -14,3 +15,16 @@ jobs:
               uses: sudo-bot/action-kcov@latest
               with:
                   cli-args: "--version"
+
+            - name: Example with a bash script (running on Docker kcov/kcov)
+              uses: sudo-bot/action-kcov@latest
+              with:
+                cli-args: "--dump-summary ./coverage ./.github/workflows/test.sh"
+
+            - name: Upload coverage reports to Codecov
+              uses: codecov/codecov-action@v4
+              with:
+                # Must be set in the repo or org settings as a secret
+                token: ${{ secrets.CODECOV_TOKEN }}
+                directory: ./coverage/
+                fail_ci_if_error: true
