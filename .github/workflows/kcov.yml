@@ -19,7 +19,7 @@ jobs:
             - name: Example with a bash script (running on Docker kcov/kcov)
               uses: sudo-bot/action-kcov@latest
               with:
-                cli-args: "--dump-summary ./coverage ./.github/workflows/test.sh"
+                cli-args: "--dump-summary --include-path=./.github/workflows/test.sh ./coverage ./.github/workflows/test.sh"
 
             - name: Upload coverage reports to Codecov
               uses: codecov/codecov-action@v4
