@@ -11,7 +11,8 @@ branding:
     color: purple
 runs:
     using: "docker"
-    image: "docker://kcov/kcov"
+    image: "docker://kcov/kcov:latest-alpine"
+    entrypoint: sh
     args:
-        - kcov
-        - ${{ inputs.cli-args }}
+        - "-ceux"
+        - "eval 'kcov ${{ inputs.cli-args }}'"
